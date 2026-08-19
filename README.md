@@ -1,49 +1,62 @@
-# Jason Hackner Music — site package
+# Jason Hackner Music
 
-Complete static site for **themlc.jasonplusproductions.com**, including artist-identity photo updates (pics 6 & 9).
+Static site for **themlc.jasonplusproductions.com** — classic soul and pop, live from Charlotte.
 
-This folder lives on branch `cursor/mlc-artist-identity-708b` in the subscription-guard repo until the MLC site has its own Git remote.
+Split out of [subscription-guard](https://github.com/jasonplusproductions-create/subscription-guard) into its own repo.
 
-## Pull this branch (Windows)
-
-From any folder where you want the files:
+## Setup (first time)
 
 ```bash
-git clone https://github.com/jasonplusproductions-create/subscription-guard.git
-cd subscription-guard
-git fetch origin cursor/mlc-artist-identity-708b
-git checkout cursor/mlc-artist-identity-708b
+git clone https://github.com/jasonplusproductions-create/jason-hackner-music.git
+cd jason-hackner-music
 ```
 
-Site files are in **`jason-hackner-music-site/`**.
+## Artist identity photos (required before deploy)
 
-If you already have the repo:
+From `C:\Users\jaydh\suno generate\Artist Identity - Jason H`, copy into this folder (site root):
+
+| Your file | Save as | Where on site |
+|-----------|---------|---------------|
+| Pic **6** (leather jacket) | `artist-identity-06.jpg` | Footer row, 3rd thumbnail |
+| Pic **9** (suit, red tie) | `artist-identity-09.jpg` | Gallery, slide 2 |
+
+See `ASSETS.md` for the full asset list.
+
+## Deploy (Vercel)
+
+1. Create/import this repo in Vercel.
+2. **Root directory:** `.` (repo root — `index.html` is at the top level).
+3. No build command; static HTML deploy.
+4. Custom domain: `themlc.jasonplusproductions.com` (or your existing MLC domain).
+
+## Local preview
 
 ```bash
-git fetch origin cursor/mlc-artist-identity-708b
-git checkout cursor/mlc-artist-identity-708b
-git pull origin cursor/mlc-artist-identity-708b
+npx --yes serve .
+# open http://localhost:3000
 ```
 
-## Add your two identity photos (required)
+## What changed vs old live site
 
-From `C:\Users\jaydh\suno generate\Artist Identity - Jason H`, copy into **`jason-hackner-music-site/`**:
+- Footer + gallery no longer use `20251215_153747.jpg` (Mark Larson).
+- Uses `artist-identity-06.jpg` and `artist-identity-09.jpg` instead (you supply these).
 
-| Copy this | Save as |
-|-----------|---------|
-| Pic **6** (leather jacket) | `artist-identity-06.jpg` |
-| Pic **9** (suit, red tie) | `artist-identity-09.jpg` |
+## Create this repo on GitHub (one-time)
 
-See `ASSETS.md` for where each file appears on the page.
+If the remote repo does not exist yet, create an empty public repo named **`jason-hackner-music`** under `jasonplusproductions-create`, then:
 
-## Deploy to Vercel
+```bash
+git remote add origin https://github.com/jasonplusproductions-create/jason-hackner-music.git
+git push -u origin main
+```
 
-1. Point your Vercel project root at **`jason-hackner-music-site/`** (or upload this folder’s contents as the deploy root).
-2. Ensure `artist-identity-06.jpg` and `artist-identity-09.jpg` are in that root next to `index.html`.
-3. Deploy.
+If you already have the standalone folder from an export:
 
-## What changed vs live site
-
-- **Footer** (3rd thumbnail): `artist-identity-06.jpg` instead of Mark Larson photo
-- **Gallery** slide 2: `artist-identity-09.jpg` instead of Mark Larson photo
-- Mark Larson file `20251215_153747.jpg` is not included or referenced
+```bash
+cd jason-hackner-music
+git init -b main
+git add -A
+git commit -m "Initial commit: Jason Hackner Music site"
+git remote add origin https://github.com/jasonplusproductions-create/jason-hackner-music.git
+git push -u origin main
+```
