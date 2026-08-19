@@ -32,6 +32,16 @@ Add before deploy (from `Artist Identity - Jason H`):
 
 See `ASSETS.md`.
 
+## Work with Cline (recommended)
+
+1. Open this folder in **VS Code** with the **Cline** extension.
+2. Cline reads `.clinerules` automatically — same idea as Cursor’s `.cursorrules`.
+3. Example prompt:
+
+   *"Read ASSETS.md and .clinerules. Confirm artist-identity-06 and 09 are wired in index.html. Help me deploy to Vercel."*
+
+For **Subscription Guard** (the Next.js app), use the separate `subscription-guard` repo — its `.clinerules` points at `AGENTS.md` and `NEXT_STEPS.md`.
+
 ## Deploy (Vercel)
 
 - Root: `.` (this folder)

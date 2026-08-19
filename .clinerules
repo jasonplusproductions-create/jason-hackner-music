@@ -1,0 +1,32 @@
+# Cline rules — Jason Hackner Music site
+
+Static site for themlc.jasonplusproductions.com. **Not** Subscription Guard.
+
+Before any task:
+1. Read `ASSETS.md` for photo filenames and deploy checklist.
+2. Read `README.md` for clone/deploy steps.
+
+## Scope
+
+- Edit `index.html`, `vercel.json`, and assets in this folder only.
+- Do **not** add Next.js, Supabase, or Subscription Guard code here.
+- Do **not** merge this site back into the subscription-guard repo.
+
+## Artist identity photos (required for deploy)
+
+User supplies from local folder:
+`C:\Users\jaydh\suno generate\Artist Identity - Jason H`
+
+| Site file | Source |
+|-----------|--------|
+| `artist-identity-06.jpg` | Pic 6 — footer row, 3rd thumbnail |
+| `artist-identity-09.jpg` | Pic 9 — gallery slide 2 |
+
+Never re-add `20251215_153747.jpg` (Mark Larson) unless the user explicitly asks.
+
+## Working style
+
+- Small HTML/CSS changes; preview with `npx serve .` if helpful.
+- After edits, confirm `index.html` still references only files that exist in the folder (or that the user will add).
+- Summarize what changed before suggesting Vercel redeploy.
+- Do not invent Vercel or GitHub credentials — ask the human to deploy or connect the repo.
